@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Marvel Heros</string>
+    <string name="home_welcome_text">Bem vindo ao Marvel Heroes</string>
+    <string name="home_choose_character_text">Escolha \nseu personagem</string>
+</resources>

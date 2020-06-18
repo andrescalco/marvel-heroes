@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="characters"
+            type="com.andrescalco.marvelheros.Characters" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/charactersTitle"
+            style="@style/Section.Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="Heróis"
+            android:text="@{characters.title}"
+            android:textColor="@color/primaryRed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/Description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ver Tudo"
+            android:textColor="@color/primaryGrey"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/charactersTitle"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/characterList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/charactersTitle"
+            android:layout_marginTop="8dp"
+            tools:itemCount="10"
+            tools:listitem="@layout/character_card_view"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:setCharacters="@{characters.characters}"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

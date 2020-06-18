@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="androidx.core.content.ContextCompat" />
+        <variable
+            name="character"
+            type="com.andrescalco.marvelheros.Character" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="140dp"
+        android:layout_height="230dp"
+        android:layout_marginEnd="8dp">
+
+        <ImageView
+            android:id="@+id/characterImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/rectangle"
+            android:foreground="@drawable/gradient_black"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/deadpool"
+            android:src="@{ContextCompat.getDrawable(context, character.imageRes)}" />
+
+        <TextView
+            android:id="@+id/characterSubtitle"
+            style="@style/Card.Subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:textColor="@color/primaryGrey"
+            app:layout_constraintBottom_toTopOf="@id/characterTitle"
+            app:layout_constraintLeft_toLeftOf="@id/characterTitle"
+            tools:text="Peter Parker"
+            android:text="@{character.subtitle}"/>
+
+        <TextView
+            android:id="@+id/characterTitle"
+            style="@style/Card.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="12dp"
+            android:textColor="@color/primaryWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:text="Homem \nAranha"
+            android:text="@{character.title}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
