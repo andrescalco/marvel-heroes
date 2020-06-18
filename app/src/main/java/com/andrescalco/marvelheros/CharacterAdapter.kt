@@ -32,8 +32,11 @@ class CharacterAdapter : ListAdapter<Character, CustomViewHolder>(Companion) {
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         val currentCharacter = getItem(position)
         val itemBinding = holder.binding as CharacterCardViewBinding
-        itemBinding.character = currentCharacter
-        itemBinding.characterImage.clipToOutline = true
-        itemBinding.executePendingBindings()
+
+        itemBinding.apply {
+            character = currentCharacter
+            characterImage.clipToOutline = true
+            executePendingBindings()
+        }
     }
 }

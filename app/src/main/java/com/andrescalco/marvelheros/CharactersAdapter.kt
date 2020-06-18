@@ -32,10 +32,12 @@ class CharactersAdapter : ListAdapter<Characters, CustomViewHolder>(Companion) {
         val currentCharacterCategory = getItem(position)
         val itemBinding = holder.binding as CharacterCategoryViewBinding
 
-        itemBinding.characters = currentCharacterCategory
-        itemBinding.characterList.isNestedScrollingEnabled = false
-        itemBinding.characterList.setRecycledViewPool(viewPool)
-        itemBinding.executePendingBindings()
+        itemBinding.apply {
+            characters = currentCharacterCategory
+            characterList.isNestedScrollingEnabled = false
+            characterList.setRecycledViewPool(viewPool)
+            executePendingBindings()
+        }
     }
 
 }
