@@ -11,14 +11,14 @@ import com.andrescalco.marvelheros.databinding.CharacterCardViewBinding
 // ViewHolder
 class CustomViewHolder(val binding: ViewDataBinding) : RecyclerView.ViewHolder(binding.root)
 
-class CharacterAdapter: ListAdapter<Character, CustomViewHolder>(Companion){
+class CharacterAdapter : ListAdapter<Character, CustomViewHolder>(Companion) {
     companion object : DiffUtil.ItemCallback<Character>() {
         override fun areItemsTheSame(oldItem: Character, newItem: Character): Boolean {
-            return  oldItem === newItem
+            return oldItem === newItem
         }
 
         override fun areContentsTheSame(oldItem: Character, newItem: Character): Boolean {
-            return  oldItem.id == newItem.id
+            return oldItem.id == newItem.id
         }
     }
 
@@ -26,7 +26,7 @@ class CharacterAdapter: ListAdapter<Character, CustomViewHolder>(Companion){
         val inflater = LayoutInflater.from(parent.context)
         val binding = CharacterCardViewBinding.inflate(inflater, parent, false)
 
-        return CustomViewHolder(binding);
+        return CustomViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {

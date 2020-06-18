@@ -13,11 +13,11 @@ class CharactersAdapter : ListAdapter<Characters, CustomViewHolder>(Companion) {
 
     companion object : DiffUtil.ItemCallback<Characters>() {
         override fun areItemsTheSame(oldItem: Characters, newItem: Characters): Boolean {
-            return  oldItem === newItem
+            return oldItem === newItem
         }
 
         override fun areContentsTheSame(oldItem: Characters, newItem: Characters): Boolean {
-            return  oldItem.id == newItem.id
+            return oldItem.id == newItem.id
         }
     }
 

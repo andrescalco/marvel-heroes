@@ -10,15 +10,15 @@ fun getData(): ArrayList<Characters> {
     charactersCategoryList.add("Aliens")
     charactersCategoryList.add("Humanos")
 
-    for(a in charactersCategoryList){
+    for (a in charactersCategoryList) {
         val characterList = arrayListOf<Character>()
-        for(b in 1..5) {
+        for (b in 1..5) {
             val character = Character("$b", "Homem \nAranha", "Peter Park", R.drawable.deadpool)
             characterList += character
         }
-        characters += Characters("$a",a, characterList)
+        characters += Characters("$a", a, characterList)
     }
 
-    return characters;
+    return characters
 
 }

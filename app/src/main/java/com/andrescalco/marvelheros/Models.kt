@@ -9,11 +9,11 @@ data class Character(
     val title: String,
     val subtitle: String,
     val imageRes: Int
-): Parcelable
+) : Parcelable
 
 @Parcelize
 data class Characters(
     val id: String,
     val title: String,
     val characters: List<Character>
-): Parcelable
+) : Parcelable

@@ -8,7 +8,7 @@ import com.andrescalco.marvelheros.R.id.categoryIcon
 import com.andrescalco.marvelheros.R.id.categoryView
 import com.andrescalco.marvelheros.R.styleable.*
 
-class CategoryIconView(context: Context, attrs: AttributeSet): ConstraintLayout(context, attrs) {
+class CategoryIconView(context: Context, attrs: AttributeSet) : ConstraintLayout(context, attrs) {
 
     init {
         inflate(context, R.layout.category_icon_view, this)

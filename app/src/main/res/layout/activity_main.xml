@@ -24,114 +24,114 @@
         <androidx.core.widget.NestedScrollView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/home_title_text"
-                style="@style/Home.Subtitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="24dp"
-                android:text="@string/home_welcome_text"
-                android:textColor="@color/primaryGrey"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-
-            <TextView
-                android:id="@+id/home_hero_text"
-                style="@style/Home.Title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/home_choose_character_text"
-                android:textColor="@color/primaryBlack"
-                app:layout_constraintLeft_toLeftOf="@id/home_title_text"
-                app:layout_constraintTop_toBottomOf="@id/home_title_text" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/categories_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                app:layout_constraintLeft_toLeftOf="@id/home_hero_text"
-                app:layout_constraintTop_toBottomOf="@id/home_hero_text">
-
-                <com.andrescalco.marvelheros.CategoryIconView
-                    android:id="@+id/hero_category_icon"
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    app:gradient="@drawable/gradient_blue"
-                    app:icon="@drawable/ic_hero"
-                    app:layout_constraintStart_toStartOf="parent"
+                <TextView
+                    android:id="@+id/home_title_text"
+                    style="@style/Home.Subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/home_welcome_text"
+                    android:textColor="@color/primaryGrey"
+                    app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <com.andrescalco.marvelheros.CategoryIconView
-                    android:id="@+id/villain_category_icon"
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:layout_marginStart="8dp"
-                    app:gradient="@drawable/gradient_red"
-                    app:icon="@drawable/ic_villain"
-                    app:layout_constraintStart_toEndOf="@+id/hero_category_icon"
-                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/home_hero_text"
+                    style="@style/Home.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/home_choose_character_text"
+                    android:textColor="@color/primaryBlack"
+                    app:layout_constraintLeft_toLeftOf="@id/home_title_text"
+                    app:layout_constraintTop_toBottomOf="@id/home_title_text" />
 
-                <com.andrescalco.marvelheros.CategoryIconView
-                    android:id="@+id/antihero_category_icon"
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:layout_marginStart="8dp"
-                    app:gradient="@drawable/gradient_purple"
-                    app:icon="@drawable/ic_antihero"
-                    app:layout_constraintStart_toEndOf="@+id/villain_category_icon"
-                    app:layout_constraintTop_toTopOf="parent" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/categories_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    app:layout_constraintLeft_toLeftOf="@id/home_hero_text"
+                    app:layout_constraintTop_toBottomOf="@id/home_hero_text">
 
-                <com.andrescalco.marvelheros.CategoryIconView
-                    android:id="@+id/alien_category_icon"
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:layout_marginStart="8dp"
-                    app:gradient="@drawable/gradient_green"
-                    app:icon="@drawable/ic_alien"
-                    app:layout_constraintStart_toEndOf="@+id/antihero_category_icon"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    <com.andrescalco.marvelheros.CategoryIconView
+                        android:id="@+id/hero_category_icon"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        app:gradient="@drawable/gradient_blue"
+                        app:icon="@drawable/ic_hero"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <com.andrescalco.marvelheros.CategoryIconView
-                    android:id="@+id/human_category_icon"
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:layout_marginStart="8dp"
-                    app:gradient="@drawable/gradient_pink"
-                    app:icon="@drawable/ic_human"
-                    app:layout_constraintStart_toEndOf="@+id/alien_category_icon"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    <com.andrescalco.marvelheros.CategoryIconView
+                        android:id="@+id/villain_category_icon"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_marginStart="8dp"
+                        app:gradient="@drawable/gradient_red"
+                        app:icon="@drawable/ic_villain"
+                        app:layout_constraintStart_toEndOf="@+id/hero_category_icon"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    <com.andrescalco.marvelheros.CategoryIconView
+                        android:id="@+id/antihero_category_icon"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_marginStart="8dp"
+                        app:gradient="@drawable/gradient_purple"
+                        app:icon="@drawable/ic_antihero"
+                        app:layout_constraintStart_toEndOf="@+id/villain_category_icon"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/characterList"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/categories_view"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
-                android:layout_marginTop="16dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                android:orientation="vertical"
-                tools:listitem="@layout/character_category_view"
-                tools:itemCount="5">
+                    <com.andrescalco.marvelheros.CategoryIconView
+                        android:id="@+id/alien_category_icon"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_marginStart="8dp"
+                        app:gradient="@drawable/gradient_green"
+                        app:icon="@drawable/ic_alien"
+                        app:layout_constraintStart_toEndOf="@+id/antihero_category_icon"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.andrescalco.marvelheros.CategoryIconView
+                        android:id="@+id/human_category_icon"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_marginStart="8dp"
+                        app:gradient="@drawable/gradient_pink"
+                        app:icon="@drawable/ic_human"
+                        app:layout_constraintStart_toEndOf="@+id/alien_category_icon"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/characterList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="24dp"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/categories_view"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/character_category_view">
 
 
-            </androidx.recyclerview.widget.RecyclerView>
+                </androidx.recyclerview.widget.RecyclerView>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
