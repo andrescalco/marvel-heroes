@@ -1,14 +1,8 @@
 package com.andrescalco.marvelheros
 
 fun getData(): ArrayList<Characters> {
-    val charactersCategoryList = arrayListOf<String>()
+    val charactersCategoryList = arrayOf("Heróis", "Vilões", "Anti-Heróis", "Aliens", "Humanos")
     val characters = arrayListOf<Characters>()
-
-    charactersCategoryList.add("Heróis")
-    charactersCategoryList.add("Vilões")
-    charactersCategoryList.add("Anti-Heróis")
-    charactersCategoryList.add("Aliens")
-    charactersCategoryList.add("Humanos")
 
     for (a in charactersCategoryList) {
         val characterList = arrayListOf<Character>()
