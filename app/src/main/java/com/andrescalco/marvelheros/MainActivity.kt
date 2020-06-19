@@ -10,8 +10,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val charactersAdapter = CharactersAdapter()
-        charactersAdapter.submitList(getData())
+        val charactersAdapter = CharactersAdapter().apply {
+            submitList(getData())
+        }
         characterList.adapter = charactersAdapter
 
     }
