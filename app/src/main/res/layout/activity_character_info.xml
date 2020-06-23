@@ -139,6 +139,152 @@
                 app:layout_constraintTop_toBottomOf="@id/characterDescription"
                 android:layout_marginTop="32dp"/>
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/strength"
+                app:layout_constraintTop_toBottomOf="@id/characterHabilityTitle"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp">
+
+                <TextView
+                    style="@style/Caracteristic"
+                    android:textColor="@color/primaryWhite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="Força"
+                    />
+
+                <com.andrescalco.marvelheros.CustomProgressBarView
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="216dp"
+                    android:layout_height="12dp"
+                    app:progress="50"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/smart"
+                app:layout_constraintTop_toBottomOf="@id/strength"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp">
+
+                <TextView
+                    style="@style/Caracteristic"
+                    android:textColor="@color/primaryWhite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="Inteligência"
+                    />
+
+                <com.andrescalco.marvelheros.CustomProgressBarView
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="216dp"
+                    android:layout_height="12dp"
+                    app:progress="80"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/agility"
+                app:layout_constraintTop_toBottomOf="@id/smart"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp">
+
+                <TextView
+                    style="@style/Caracteristic"
+                    android:textColor="@color/primaryWhite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="Agilidade"
+                    />
+
+                <com.andrescalco.marvelheros.CustomProgressBarView
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="216dp"
+                    android:layout_height="12dp"
+                    app:progress="60"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/resistency"
+                app:layout_constraintTop_toBottomOf="@id/agility"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp">
+
+                <TextView
+                    style="@style/Caracteristic"
+                    android:textColor="@color/primaryWhite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="Resistência"
+                    />
+
+                <com.andrescalco.marvelheros.CustomProgressBarView
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="216dp"
+                    android:layout_height="12dp"
+                    app:progress="20"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/velocity"
+                app:layout_constraintTop_toBottomOf="@id/resistency"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp">
+
+                <TextView
+                    style="@style/Caracteristic"
+                    android:textColor="@color/primaryWhite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="Velocidade"
+                    />
+
+                <com.andrescalco.marvelheros.CustomProgressBarView
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="216dp"
+                    android:layout_height="12dp"
+                    app:progress="70"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
             <TextView
                 style="@style/Section.Title"
                 android:id="@+id/moviesTitle"
@@ -146,9 +292,10 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/primaryWhite"
                 android:text="@string/movies_title"
-                app:layout_constraintLeft_toLeftOf="@id/characterHabilityTitle"
-                app:layout_constraintTop_toBottomOf="@id/characterHabilityTitle"
-                android:layout_marginTop="32dp"/>
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/velocity"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="24dp"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/moviesList"

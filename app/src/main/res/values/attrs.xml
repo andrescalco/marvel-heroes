@@ -8,4 +8,7 @@
         <attr name="characteristicIcon" format="reference" />
         <attr name="name" format="string" />
     </declare-styleable>
+    <declare-styleable name="CustomProgressBarView">
+        <attr name="progress" format="integer" />
+    </declare-styleable>
 </resources>

@@ -1,5 +1,7 @@
 package com.andrescalco.marvelheros
 
+import android.content.res.Resources
+
 fun getData(): ArrayList<Characters> {
     val charactersCategoryList = arrayOf("Heróis", "Vilões", "Anti-Heróis", "Aliens", "Humanos")
     val characters = arrayListOf<Characters>()
@@ -25,3 +27,9 @@ fun getMovies(): ArrayList<Movie> {
     }
     return movies
 }
+
+val Int.dp: Int
+    get() = (this / Resources.getSystem().displayMetrics.density).toInt()
+
+val Int.px: Int
+    get() = (this * Resources.getSystem().displayMetrics.density).toInt()
