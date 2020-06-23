@@ -11,3 +11,12 @@ fun RecyclerView.setCharacters(characters: List<Character>?) {
         adapter = characterAdapter
     }
 }
+
+//@BindingAdapter("setMovies")
+//fun RecyclerView.setMovies(movies: List<Movie>?) {
+//    movies?.let{
+//        val movieAdapter = MovieAdapter()
+//        movieAdapter.submitList(movies)
+//        adapter = movieAdapter
+//    }
+//}

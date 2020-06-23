@@ -16,3 +16,12 @@ fun getData(): ArrayList<Characters> {
     return characters
 
 }
+
+fun getMovies(): ArrayList<Movie> {
+    val movies = arrayListOf<Movie>()
+    for (a in 1..5) {
+        val movie = Movie("$a", R.drawable.hulk)
+        movies += movie
+    }
+    return movies
+}

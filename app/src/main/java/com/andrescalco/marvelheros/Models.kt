@@ -17,3 +17,14 @@ data class Characters(
     val title: String,
     val characters: List<Character>
 ) : Parcelable
+
+@Parcelize
+data class Movie(
+    val id: String,
+    val imageRes: Int
+) : Parcelable
+
+@Parcelize
+data class Movies(
+    val movies: List<Movie>
+) : Parcelable
