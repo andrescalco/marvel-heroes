@@ -1,9 +1,12 @@
 package com.andrescalco.marvelheros
 
-import android.app.Dialog
+import android.app.Activity
+import android.content.Intent
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AlertDialog
+import androidx.core.app.ActivityOptionsCompat
+import androidx.core.util.Pair
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -38,6 +41,23 @@ class CharacterAdapter : ListAdapter<Character, CustomViewHolder>(Companion) {
         itemBinding.apply {
             character = currentCharacter
             characterImage.clipToOutline = true
+            characterImage.setOnClickListener {
+                val intent = Intent(it.context, CharacterInfoActivity::class.java)
+
+                val characterImagePair = Pair<View, String>(characterImage, "character_image")
+                val characterSubtitlePair =
+                    Pair<View, String>(characterSubtitle, "character_subtitle")
+                val characterTitlePair = Pair<View, String>(characterTitle, "character_title")
+
+                val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                    it.context as Activity,
+                    characterImagePair,
+                    characterSubtitlePair,
+                    characterTitlePair
+                )
+
+                it.context.startActivity(intent, options.toBundle())
+            }
             executePendingBindings()
         }
     }

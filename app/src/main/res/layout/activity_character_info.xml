@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".CharacterInfoActivity"
+        android:background="@color/primaryBlack">
+
+        <ImageView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/characterImageDetail"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/rectangle"
+            android:foreground="@drawable/gradient_black"
+            android:scaleType="centerCrop"
+            android:src="@drawable/deadpool"
+            tools:src="@drawable/deadpool"
+            android:transitionName="character_image" />
+
+        <TextView
+            android:id="@+id/profile_subtitle_text"
+            style="@style/Profile.Subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Peter Park"
+            android:text="Peter Park"
+            android:textColor="@color/primaryGrey"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="230dp"
+            android:transitionName="character_subtitle"
+            />
+
+        <TextView
+            android:id="@+id/profile_title_text"
+            style="@style/Profile.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Homem \nAranha"
+            tools:text="Homem \nAranha"
+            android:textColor="@color/primaryWhite"
+            app:layout_constraintTop_toBottomOf="@id/profile_subtitle_text"
+            app:layout_constraintLeft_toLeftOf="@id/profile_subtitle_text"
+            android:layout_marginTop="8dp"
+            android:transitionName="character_title"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profile_title_text"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp">
+
+            <com.andrescalco.marvelheros.CharacteristicIconView
+                android:id="@+id/icon_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:characteristicIcon="@drawable/ic_age"
+                app:layout_constraintEnd_toStartOf="@+id/icon_weight"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:name="27 anos" />
+
+            <com.andrescalco.marvelheros.CharacteristicIconView
+                android:id="@+id/icon_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:characteristicIcon="@drawable/ic_weight"
+                app:layout_constraintEnd_toStartOf="@+id/icon_height"
+                app:layout_constraintStart_toEndOf="@+id/icon_age"
+                app:layout_constraintTop_toTopOf="parent"
+                app:name="78 kg" />
+
+            <com.andrescalco.marvelheros.CharacteristicIconView
+                android:id="@+id/icon_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:characteristicIcon="@drawable/ic_height"
+                app:layout_constraintEnd_toStartOf="@+id/icon_universe"
+                app:layout_constraintStart_toEndOf="@+id/icon_weight"
+                app:layout_constraintTop_toTopOf="parent"
+                app:name="1.80m" />
+
+            <com.andrescalco.marvelheros.CharacteristicIconView
+                android:id="@+id/icon_universe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:characteristicIcon="@drawable/ic_universe"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/icon_height"
+                app:layout_constraintTop_toTopOf="parent"
+                app:name="1.80m" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

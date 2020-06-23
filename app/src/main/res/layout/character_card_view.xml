@@ -25,7 +25,8 @@
             android:foreground="@drawable/gradient_black"
             android:scaleType="centerCrop"
             android:src="@{ContextCompat.getDrawable(context, character.imageRes)}"
-            tools:src="@drawable/deadpool" />
+            tools:src="@drawable/deadpool"
+            android:transitionName="character_image"/>
 
         <TextView
             android:id="@+id/characterSubtitle"
@@ -37,7 +38,8 @@
             android:textColor="@color/primaryGrey"
             app:layout_constraintBottom_toTopOf="@id/characterTitle"
             app:layout_constraintLeft_toLeftOf="@id/characterTitle"
-            tools:text="Peter Parker" />
+            tools:text="Peter Parker"
+            android:transitionName="character_subtitle"/>
 
         <TextView
             android:id="@+id/characterTitle"
@@ -50,7 +52,8 @@
             android:textColor="@color/primaryWhite"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            tools:text="Homem \nAranha" />
+            tools:text="Homem \nAranha"
+            android:transitionName="character_title"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
