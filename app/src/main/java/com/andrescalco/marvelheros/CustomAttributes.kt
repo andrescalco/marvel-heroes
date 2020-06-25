@@ -1,7 +1,9 @@
 package com.andrescalco.marvelheros
 
+import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 @BindingAdapter("setCharacters")
 fun RecyclerView.setCharacters(characters: List<Character>?) {
@@ -12,11 +14,11 @@ fun RecyclerView.setCharacters(characters: List<Character>?) {
     }
 }
 
-//@BindingAdapter("setMovies")
-//fun RecyclerView.setMovies(movies: List<Movie>?) {
-//    movies?.let{
-//        val movieAdapter = MovieAdapter()
-//        movieAdapter.submitList(movies)
-//        adapter = movieAdapter
-//    }
-//}
+@BindingAdapter("imageFromUrl")
+fun bindImageFromUrl(view: ImageView, imageUrl: String?){
+    if(!imageUrl.isNullOrEmpty()) {
+        Glide.with(view.context)
+            .load(imageUrl)
+            .into(view)
+    }
+}
