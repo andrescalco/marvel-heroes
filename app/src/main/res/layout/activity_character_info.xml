@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="character"
+            type="com.andrescalco.marvelheros.Character" />
     </data>
 
     <ScrollView
@@ -18,46 +21,45 @@
             tools:context=".CharacterInfoActivity">
 
             <ImageView
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
                 android:id="@+id/characterImageDetail"
                 android:layout_width="match_parent"
                 android:layout_height="650dp"
                 android:background="@drawable/rectangle"
                 android:foreground="@drawable/gradient_black"
                 android:scaleType="centerCrop"
-                android:src="@drawable/deadpool"
-                tools:src="@drawable/deadpool"
-                android:transitionName="character_image" />
+                android:transitionName="character_image"
+                app:imageFromUrl="@{character.imagePath}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/deadpool" />
 
             <TextView
                 android:id="@+id/profile_subtitle_text"
                 style="@style/Profile.Subtitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="Peter Park"
-                android:text="Peter Park"
-                android:textColor="@color/primaryGrey"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="230dp"
+                android:text="@{character.alterEgo}"
+                android:textColor="@color/primaryGrey"
                 android:transitionName="character_subtitle"
-                />
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Peter Park" />
 
             <TextView
                 android:id="@+id/profile_title_text"
                 style="@style/Profile.Title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Homem \nAranha"
-                tools:text="Homem \nAranha"
-                android:textColor="@color/primaryWhite"
-                app:layout_constraintTop_toBottomOf="@id/profile_subtitle_text"
-                app:layout_constraintLeft_toLeftOf="@id/profile_subtitle_text"
                 android:layout_marginTop="8dp"
+                android:textColor="@color/primaryWhite"
                 android:transitionName="character_title"
-                />
+                app:breakCharacterName="@{character.name}"
+                app:layout_constraintLeft_toLeftOf="@id/profile_subtitle_text"
+                app:layout_constraintTop_toBottomOf="@id/profile_subtitle_text"
+                tools:text="@string/dummy_character_name" />
+
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/characteristicsGroup"
@@ -79,7 +81,8 @@
                     app:layout_constraintHorizontal_chainStyle="spread_inside"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:name="27 anos" />
+                    tools:name="27 anos"
+                    app:name="@{character.caracteristics.birth}" />
 
                 <com.andrescalco.marvelheros.CharacteristicIconView
                     android:id="@+id/icon_weight"
@@ -89,7 +92,8 @@
                     app:layout_constraintEnd_toStartOf="@+id/icon_height"
                     app:layout_constraintStart_toEndOf="@+id/icon_age"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:name="78 kg" />
+                    tools:name="78 kg"
+                    app:name="@{character.caracteristics.weight}" />
 
                 <com.andrescalco.marvelheros.CharacteristicIconView
                     android:id="@+id/icon_height"
@@ -99,7 +103,8 @@
                     app:layout_constraintEnd_toStartOf="@+id/icon_universe"
                     app:layout_constraintStart_toEndOf="@+id/icon_weight"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:name="1.80m" />
+                    tools:name="1.80m"
+                    app:name="@{character.caracteristics.height}"/>
 
                 <com.andrescalco.marvelheros.CharacteristicIconView
                     android:id="@+id/icon_universe"
@@ -109,7 +114,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/icon_height"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:name="Terra 616" />
+                    tools:name="Terra 616"
+                    app:name="@{character.caracteristics.universe}"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -124,7 +130,8 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 app:layout_constraintRight_toRightOf="parent"
-                android:text="@string/dummy_character_text"
+                tools:text="@string/dummy_character_text"
+                android:text="@{character.biography}"
                 android:textColor="@color/primaryWhite"
                 />
 
@@ -164,7 +171,8 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     android:layout_width="216dp"
                     android:layout_height="12dp"
-                    app:progress="50"/>
+                    tools:progress="50"
+                    app:progress="@{character.abilities.force}" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -193,7 +201,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     android:layout_width="216dp"
                     android:layout_height="12dp"
-                    app:progress="80"/>
+                    tools:progress="80"
+                    app:progress="@{character.abilities.intelligence}"
+                    />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -222,7 +232,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     android:layout_width="216dp"
                     android:layout_height="12dp"
-                    app:progress="60"/>
+                    tools:progress="60"
+                    app:progress="@{character.abilities.agility}"
+                    />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -251,7 +263,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     android:layout_width="216dp"
                     android:layout_height="12dp"
-                    app:progress="20"/>
+                    tools:progress="20"
+                    app:progress="@{character.abilities.endurance}"
+                    />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -280,7 +294,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     android:layout_width="216dp"
                     android:layout_height="12dp"
-                    app:progress="70"/>
+                    tools:progress="70"
+                    app:progress="@{character.abilities.velocity}"
+                    />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -313,6 +329,7 @@
                 android:clipToPadding="false"
                 android:layout_marginBottom="48dp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:setMovies="@{character.movies}"
                 />
 
 

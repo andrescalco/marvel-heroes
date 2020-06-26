@@ -1,18 +1,20 @@
 package com.andrescalco.marvelheros
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.WindowManager
-import kotlinx.android.synthetic.main.activity_character_info.*
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import com.andrescalco.marvelheros.databinding.ActivityCharacterInfoBinding
+import com.andrescalco.marvelheros.Character
 
 class CharacterInfoActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_character_info)
 
-        val moviesAdapter = MovieAdapter().apply {
-            submitList(getMovies())
-        }
-        moviesList.adapter = moviesAdapter
+        val binding: ActivityCharacterInfoBinding =
+            DataBindingUtil.setContentView(this, R.layout.activity_character_info)
+
+        binding.character = intent.getParcelableExtra("character")
+
     }
 }

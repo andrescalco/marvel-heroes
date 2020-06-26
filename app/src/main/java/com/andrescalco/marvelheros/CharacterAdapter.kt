@@ -56,6 +56,7 @@ class CharacterAdapter : ListAdapter<Character, CustomViewHolder>(Companion) {
                     characterTitlePair
                 )
 
+                intent.putExtra("character", character);
                 it.context.startActivity(intent, options.toBundle())
             }
             executePendingBindings()
