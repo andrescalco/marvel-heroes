@@ -5,11 +5,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="androidx.core.content.ContextCompat" />
-
         <variable
             name="movie"
-            type="com.andrescalco.marvelheros.Movie" />
+            type="String" />
     </data>
 
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,7 +24,7 @@
         tools:src="@drawable/deadpool"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:src="@{ContextCompat.getDrawable(context, movie.imageRes)}"/>
+        app:imageFromUrl="@{movie}"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

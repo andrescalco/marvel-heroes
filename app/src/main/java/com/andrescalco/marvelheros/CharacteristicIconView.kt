@@ -14,4 +14,9 @@ class CharacteristicIconView(context: Context, attrs: AttributeSet) : Constraint
         characteristicName.text = attributes.getText(CharacteristicIconView_name)
         attributes.recycle()
     }
+
+    fun setName(name: String) {
+        characteristicName.text = name
+    }
+
 }

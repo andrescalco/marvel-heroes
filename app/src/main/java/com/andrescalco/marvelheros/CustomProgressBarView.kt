@@ -15,7 +15,11 @@ class CustomProgressBarView @JvmOverloads constructor(
 ) : View(context, attrs, defStyleAttr) {
 
     private val attributes = context.obtainStyledAttributes(attrs, CustomProgressBarView)
-    private val percentage = attributes.getInt(CustomProgressBarView_progress, 0)
+    private var percentage: Int = 0
+
+    fun setProgress(progressValue: Int){
+        percentage = progressValue
+    }
 
     override fun onDraw(canvas: Canvas?) {
         val paint = Paint()
@@ -54,4 +58,6 @@ class CustomProgressBarView @JvmOverloads constructor(
 
         super.onDraw(canvas)
     }
+
+
 }
